@@ -67,9 +67,9 @@ $ changelog -h
     -M, --major            create a major changelog
     -t, --tag <range>      generate from specific tag or range (e.g. v1.2.3 or v1.2.3..v1.2.4)
     -x, --exclude <types>  exclude selected commit types (comma separated)
+    -c, --category <categories>  include from specific commit categories (comma separated)
     -f, --file [file]      file to write to, defaults to ./CHANGELOG.md, use - for stdout
     -u, --repo-url [url]   specify the repo URL for commit links, defaults to checking the package.json
-    -a, --allow-unknown    allow unknown commit types
 ```
 
 It's possible to create a `./CHANGELOG.md` file for a specific commit range:
@@ -107,10 +107,6 @@ The way that I would recommend using this module would be the way it's being use
 "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
 "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
 ```
-
-### GitHub Actions
-
-You can run this module in a GitHub Actions workflow using the [generate-changelog-action](https://github.com/marketplace/actions/generate-changelog-action) Action.
 
 ## Testing
 
